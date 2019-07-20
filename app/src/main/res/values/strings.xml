@@ -40,4 +40,18 @@
     <string name="countdown">%1$d seconds left!</string>
     <string name="resend_code">Resend Code</string>
 
+
+    <string-array name="provinces">
+        <item>Province 1</item>
+        <item>Province 2</item>
+        <item>Province 3</item>
+        <item>Province 4</item>
+    </string-array>
+
+    <string-array name="municipality">
+        <item>Kathmandu</item>
+        <item>Chitwan</item>
+        <item>Lumbini</item>
+        <item>Butwal</item>
+    </string-array>
 </resources>

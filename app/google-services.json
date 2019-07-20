@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1054814527011",
+    "firebase_url": "https://loca-9518f.firebaseio.com",
+    "project_id": "loca-9518f",
+    "storage_bucket": "loca-9518f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054814527011:android:7acef88460227727",
+        "android_client_info": {
+          "package_name": "com.digitalized_nepal.localgovernance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054814527011-sbtso868ih70k8c91pgpp9rc4109r8rj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digitalized_nepal.localgovernance",
+            "certificate_hash": "a295098db5db9bfa4e292584ef435d907f4c1433"
+          }
+        },
+        {
+          "client_id": "1054814527011-fq46ptngf3va3fgcrb3tgchdvupnfofb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9JT3oNjU10FCJm8Yeed49c996eOsnB88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054814527011-fq46ptngf3va3fgcrb3tgchdvupnfofb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

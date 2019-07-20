@@ -33,6 +33,23 @@ dependencies {
     //firebase auth
     implementation 'com.google.firebase:firebase-auth:18.1.0'
 
+    //firebase auth
+    implementation 'com.google.firebase:firebase-auth:18.1.0'
+
+    //Country code picker
+    implementation 'com.github.joielechong:countrycodepicker:2.3.0'
+
+    //Circularmorph layout
+    implementation 'com.github.rrsaikat:CircularMorphProgressBarLibrary:0.1.0'
+
+    // PinView
+    implementation 'com.github.GoodieBag:Pinview:v1.3'
+
+    //general
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+
 
 }
 

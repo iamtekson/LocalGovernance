@@ -3,4 +3,24 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="material_red_400">#EF5350</color>
+    <color name="material_red_500">#F44336</color>
+    <color name="material_red_600">#ba000d</color>
+    <color name="material_red_700">#D32F2F</color>
+    <color name="material_red_800">#C62828</color>
+
+    <!--Category List Background-->
+    <color name="cat_veg">#388e3c</color>
+    <color name="cat_fruits">#ffa726</color>
+    <color name="cat_dairy">#bdbdbd</color>
+    <color name="cat_meat">#e57373</color>
+    <color name="cat_livestock_sell">#fff176</color>
+    <color name="background">#DADADA</color>
+
+
+    <color name="colorButtonBrandFill">@color/colorAccent</color>
+    <color name="colorButtonBrandFillDisabled">#ffbdbdbd</color>
+    <color name="colorButtonBrandFillFocused">@color/colorPrimaryDark</color>
+    <color name="colorButtonBrandFillPressed">@color/colorPrimaryDark</color>
 </resources>

@@ -16,19 +16,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserDetailActivity"></activity>
+        <activity android:name=".TakeSurvey"></activity>
+        <activity
+            android:name=".FetchProblems"
+            android:label="Local Issues"
+            android:parentActivityName=".MainPage" />
+        <activity android:name=".stateproblem"
+            android:parentActivityName=".MainPage"
+            android:label="Issue Query"
+            />
+        <activity
+            android:name=".MainPage"
+            android:label="Local Governance"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".UserDetailActivity" />
         <activity android:name=".UserVerifyingAcitivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".UserLoginActivity" />
-        <activity android:name=".SplashScreen" >
+        <activity
+            android:name=".SplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity">
-
         </activity>
     </application>
 

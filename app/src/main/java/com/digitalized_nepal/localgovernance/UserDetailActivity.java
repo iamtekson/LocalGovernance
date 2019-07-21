@@ -35,13 +35,14 @@ public class UserDetailActivity extends AppCompatActivity {
 
 
     TextInputEditText fname;
-    TextInputEditText war;
     TextInputEditText citz;
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
 
+    SharedPreferences preferences;
 
-    private String mobileeno;
+
+
 
 
 
@@ -50,33 +51,46 @@ public class UserDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_detail);
+        setContentView(R.layout.signup);
         fname = (TextInputEditText) findViewById(R.id.FullName);
-        war = (TextInputEditText) findViewById(R.id.ward_number);
         citz = (TextInputEditText) findViewById(R.id.citizenship_number);
 
+        preferences = getSharedPreferences("UserData",0);
 
-        mobileeno = getIntent().getStringExtra("phonenumber");
+
+
 
 
 
         mFirebaseInstance = FirebaseDatabase.getInstance();
         initspinner();
 
-        mFirebaseDatabase = mFirebaseInstance.getReference("users");
+
 
         findViewById(R.id.register).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+
+
+
                     fullname = fname.getText().toString().trim();
-                    wardno = war.getText().toString().trim();
                     citizenno = citz.getText().toString().trim();
+
+                SharedPreferences.Editor editor = preferences.edit();
+
+
+                editor.putString("fullname", fullname);
+                editor.putString("wardno", wardno);
+                editor.putString("provinceno", province);
+                editor.putString("citizenno", citizenno);
+                editor.putString("municipality", municipality);
+                editor.commit();
 
 
 
                     createUser(fullname, wardno, citizenno, province, municipality);
-                    Intent intent = new Intent(UserDetailActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(UserDetailActivity.this, MainPage.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
 
@@ -112,6 +126,12 @@ public class UserDetailActivity extends AppCompatActivity {
         // TODO
         // In real apps this userId should be fetched
         // by implementing fir;ebase auth
+
+        mFirebaseDatabase = mFirebaseInstance.getReference("Municipality")
+                .child("Kathmandu")
+                .child("Wardno1")
+                .child("users");
+
         currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
 
@@ -152,6 +172,23 @@ public class UserDetailActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 municipality = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        Spinner spinner2 = findViewById(R.id.spinner_wardno);
+        ArrayAdapter<CharSequence> adapter12 = ArrayAdapter.createFromResource(this,
+                R.array.wardno, android.R.layout.simple_spinner_item);
+        adapter12.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(adapter12);
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                wardno = parent.getItemAtPosition(position).toString();
             }
 
             @Override

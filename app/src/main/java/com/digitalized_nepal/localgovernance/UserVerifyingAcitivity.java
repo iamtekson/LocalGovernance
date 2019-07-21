@@ -193,7 +193,7 @@ public class UserVerifyingAcitivity extends AppCompatActivity {
                                     }
                                     else
                                     {
-                                        Intent intent = new Intent(UserVerifyingAcitivity.this, HomeActivity.class);
+                                        Intent intent = new Intent(UserVerifyingAcitivity.this, MainPage.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
                                     }

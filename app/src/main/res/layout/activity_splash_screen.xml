@@ -8,9 +8,17 @@
     android:layout_height="match_parent"
     tools:context=".SplashScreen">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/nav_header_desc"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        app:srcCompat="@drawable/ic_hand_shake" />
+
 
     <TextView
-        android:textSize="30sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         android:fontFamily="serif"
         android:textColor="#0000ff"

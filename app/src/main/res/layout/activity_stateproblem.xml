@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".stateproblem"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="24sp"
+        android:text="Create an Issue"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text=" Choose your topic"/>
+    <Spinner
+        android:id="@+id/spinner_issue"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_edittext"
+        android:layout_margin="2dp"
+        />
+
+    <EditText
+        android:id="@+id/report_post"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:maxLines="8"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/custom_edittext"
+        android:hint="A breif description about issue..."/>
+
+    <Button
+        android:id="@+id/submit_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_background"
+        android:text="Submit Issue"
+        android:textColor="#FFF" />
+</LinearLayout>

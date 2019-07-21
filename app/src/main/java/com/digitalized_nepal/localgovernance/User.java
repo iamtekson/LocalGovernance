@@ -11,6 +11,11 @@ public class User {
     public String province;
     public String municipality;
 
+    public User()
+    {
+
+    }
+
     public User(String fullName, String wardno, String citizenshipno, String province, String municipality) {
         this.fullName = fullName;
         this.wardno = wardno;

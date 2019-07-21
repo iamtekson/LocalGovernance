@@ -30,7 +30,7 @@ public class SplashScreen extends AppCompatActivity {
                     intent = new Intent(SplashScreen.this, UserLoginActivity.class);
                 } else {
 //                    if (Injection.getSharedPreference().getBoolean(SharedPrefConstants.IS_USER_DETAILS_ENTERED)) {
-                    intent = new Intent(SplashScreen.this, HomeActivity.class);
+                    intent = new Intent(SplashScreen.this, MainPage.class);
 
                 }
                 finish();

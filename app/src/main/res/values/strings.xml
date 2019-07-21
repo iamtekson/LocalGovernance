@@ -3,7 +3,7 @@
 
     <!--LoginScreen Activity-->
 
-    <string name="hi">Hi.</string>
+    <string name="hi">"Spread your voice!!!"</string>
     <string name="lets_get_started">Let\'s Get Started</string>
     <string name="hint_phone_number">Phone Number</string>
     <string name="proceed">PROCEED</string>
@@ -51,12 +51,7 @@
     <string-array name="wardno">
         <item>1</item>
         <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
+
 
 
 

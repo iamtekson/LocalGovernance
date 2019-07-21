@@ -1,12 +1,14 @@
 package com.digitalized_nepal.localgovernance;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
@@ -20,11 +22,17 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 
 import spencerstudios.com.fab_toast.FabToast;
 
 public class MainPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private SharedPreferences sharedPreferences;
+
+    TextView username, ward, munici, provinc;
+
 
     TabLayout tab;
     ViewPager pager;
@@ -37,15 +45,39 @@ public class MainPage extends AppCompatActivity
         setContentView(R.layout.activity_main_page);
 
 
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+
+        username = navigationView.getHeaderView(0).findViewById(R.id.user_n);
+        ward = navigationView.getHeaderView(0).findViewById(R.id.ward_n);
+        munici = navigationView.getHeaderView(0).findViewById(R.id.muni);
+        provinc = navigationView.getHeaderView(0).findViewById(R.id.province_n);
+        sharedPreferences = getSharedPreferences("UserData",0);
+
+        String naaam = sharedPreferences.getString("fullname", null);
+        String wada = sharedPreferences.getString("wardno", null);
+        String nagar = sharedPreferences.getString("municipality", null);
+        String xetra = sharedPreferences.getString("provinceno", null);
+
+        Log.i("dd","ff"+naaam);
+
+        username.setText(naaam);
+        ward.setText("Ward no:"+" "+wada);
+        munici.setText(nagar+" "+"Municipality");
+        provinc.setText(xetra);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+
 
         tab = (TabLayout) findViewById(R.id.tab);
         tab.addTab(tab.newTab().setText("Government Updates"));

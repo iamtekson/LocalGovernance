@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -35,6 +36,8 @@ public class governmentupdates extends Fragment {
     ArrayList<String> titile;
 
     GoveUpdateAdapter goveUpdateAdapter;
+    private SharedPreferences sharedPreferences;
+
 
     @Nullable
     @Override
@@ -52,12 +55,14 @@ public class governmentupdates extends Fragment {
         imageid = new ArrayList<>();
         titile = new ArrayList<>();
 
+        sharedPreferences = getActivity().getSharedPreferences("UserData",0);
+
 
         DatabaseReference databaseReference;
         databaseReference = FirebaseDatabase.getInstance()
                 .getReference("Municipality")
                 .child("Kathmandu")
-                .child("Wardno1")
+                .child("Wardno"+sharedPreferences.getString("wardno", null))
                 .child("GovUpdates");
 
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {

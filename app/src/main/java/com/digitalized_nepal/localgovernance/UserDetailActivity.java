@@ -129,7 +129,7 @@ public class UserDetailActivity extends AppCompatActivity {
 
         mFirebaseDatabase = mFirebaseInstance.getReference("Municipality")
                 .child("Kathmandu")
-                .child("Wardno1")
+                .child("Wardno"+wardno)
                 .child("users");
 
         currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();

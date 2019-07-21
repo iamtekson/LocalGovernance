@@ -10,6 +10,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -32,6 +33,9 @@ public class FetchProblems extends AppCompatActivity {
 
     LocalIssueAdapter localIssueAdapter;
 
+    private SharedPreferences sharedPreferences;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +53,7 @@ public class FetchProblems extends AppCompatActivity {
             topi = new ArrayList<>();
             Intent intent = getIntent();
             String getRequest = intent.getStringExtra("issues");
+            sharedPreferences = getSharedPreferences("UserData",0);
 
             if (getRequest.equals("health")) {
 
@@ -56,7 +61,7 @@ public class FetchProblems extends AppCompatActivity {
                 databaseReference = FirebaseDatabase.getInstance()
                         .getReference("Municipality")
                         .child("Kathmandu")
-                        .child("Wardno1")
+                        .child("Wardno"+sharedPreferences.getString("wardno", null))
                         .child("Problems")
                         .child("Health");
                 ;
@@ -93,7 +98,7 @@ public class FetchProblems extends AppCompatActivity {
                 databaseReference = FirebaseDatabase.getInstance()
                         .getReference("Municipality")
                         .child("Kathmandu")
-                        .child("Wardno1")
+                        .child("Wardno"+sharedPreferences.getString("wardno", null))
                         .child("Problems")
                         .child("Education");
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -130,7 +135,7 @@ public class FetchProblems extends AppCompatActivity {
                 databaseReference = FirebaseDatabase.getInstance()
                         .getReference("Municipality")
                         .child("Kathmandu")
-                        .child("Wardno1")
+                        .child("Wardno"+sharedPreferences.getString("wardno", null))
                         .child("Problems")
                         .child("Social Issues");
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -166,7 +171,7 @@ public class FetchProblems extends AppCompatActivity {
                 databaseReference = FirebaseDatabase.getInstance()
                         .getReference("Municipality")
                         .child("Kathmandu")
-                        .child("Wardno1")
+                        .child("Wardno"+sharedPreferences.getString("wardno", null))
                         .child("Problems")
                         .child("Drinking Water");
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -202,7 +207,7 @@ public class FetchProblems extends AppCompatActivity {
                 databaseReference = FirebaseDatabase.getInstance()
                         .getReference("Municipality")
                         .child("Kathmandu")
-                        .child("Wardno1")
+                        .child("Wardno"+sharedPreferences.getString("wardno", null))
                         .child("Problems")
                         .child("Transparency");
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {

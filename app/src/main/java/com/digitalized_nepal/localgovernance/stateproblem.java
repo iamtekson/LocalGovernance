@@ -57,7 +57,7 @@ public class stateproblem extends AppCompatActivity {
                     reference = FirebaseDatabase.getInstance().getReference("Municipality");
 
                     reference.child("Kathmandu")
-                            .child("Wardno1")
+                            .child("Wardno"+sharedPreferences.getString("wardno", null))
                             .child("Problems")
                             .child(topics_issue)
                             .child(convert)
@@ -74,7 +74,7 @@ public class stateproblem extends AppCompatActivity {
                     reference = FirebaseDatabase.getInstance().getReference("Municipality");
 
                     reference.child("Kathmandu")
-                            .child("Wardno1")
+                            .child("Wardno"+sharedPreferences.getString("wardno", null))
                             .child("Problems")
                             .child(topics_issue)
                             .child(convert)
@@ -91,7 +91,7 @@ public class stateproblem extends AppCompatActivity {
                     reference = FirebaseDatabase.getInstance().getReference("Municipality");
 
                     reference.child("Kathmandu")
-                            .child("Wardno1")
+                            .child("Wardno"+sharedPreferences.getString("wardno", null))
                             .child("Problems")
                             .child(topics_issue)
                             .child(convert)
@@ -109,7 +109,7 @@ public class stateproblem extends AppCompatActivity {
                     reference = FirebaseDatabase.getInstance().getReference("Municipality");
 
                     reference.child("Kathmandu")
-                            .child("Wardno1")
+                            .child("Wardno"+sharedPreferences.getString("wardno", null))
                             .child("Problems")
                             .child(topics_issue)
                             .child(convert)
@@ -126,7 +126,7 @@ public class stateproblem extends AppCompatActivity {
                     reference = FirebaseDatabase.getInstance().getReference("Municipality");
 
                     reference.child("Kathmandu")
-                            .child("Wardno1")
+                            .child("Wardno"+sharedPreferences.getString("wardno", null))
                             .child("Problems")
                             .child(topics_issue)
                             .child(convert)
